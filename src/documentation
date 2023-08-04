@@ -1,0 +1,51 @@
+1.API Documentation:
+
+  Base URL: http://localhost:8080/api
+
+   Endpoints:
+
+      Product:
+
+        POST /products: Create a new product.
+        GET /products: Retrieve all products.
+        GET /products/{id}: Retrieve a product by its ID.
+        PUT /products/{id}: Update a product by its ID.
+        DELETE /products/{id}: Delete a product by its ID.
+
+      Customer:
+
+        POST /customers: Create a new customer.
+        GET /customers: Retrieve all customers.
+        GET /customers/{id}: Retrieve a customer by their ID.
+        PUT /customers/{id}: Update a customer by their ID.
+        DELETE /customers/{id}: Delete a customer by their ID.
+
+      Order:
+
+        POST /orders: Create a new order.
+        GET /orders: Retrieve all orders.
+        GET /orders/{id}: Retrieve an order by its ID.
+        PUT /orders/{id}: Update an order by its ID.
+        DELETE /orders/{id}: Delete an order by its ID.
+
+2. TIG Stack Integration:
+
+     Telegraf:
+
+       Configure Telegraf to collect metrics from the Spring Boot application. Refer to the Telegraf configuration file (telegraf.conf) provided in the project.
+
+     InfluxDB:
+
+       Create an InfluxDB database named ecommerce_metrics to store the collected performance metrics.
+
+     Grafana:
+
+        Access Grafana at http://localhost:3000.
+        Log in using the default credentials (admin/admin) or set up a new account.
+        Add InfluxDB as a data source with the settings mentioned earlier.
+        Create a dashboard and add panels to visualize the collected metrics (e.g., request/response times, JVM memory usage).
+
+3. Additional Notes:
+
+        The application follows best practices and is structured using separate layers (controller, service, repository) to maintain clean code and separation of concerns.
+        The API endpoints are secured and do not require authentication.
